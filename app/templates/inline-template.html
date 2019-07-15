@@ -1,0 +1,116 @@
+<div class="subTopic">
+    <div class="restaurantWrap">
+        {% for restaurant in data %}
+            <div class='restaurant' id="{{restaurant.name|replace(' ', '-')|replace('.','')|replace('&','and')|replace('’', '')}}">
+
+                <div class="stickyTitle">
+                    <div class="name">
+                        {{restaurant.name}}
+                    </div>
+                    <div class="location">
+                        {{restaurant.location}}
+                    </div>
+                </div>
+
+                {% set photoInfo = photos[restaurant.key] %}{% include "./partials/gallery.html" ignore missing %}
+
+                <div class="quoteSection">
+                    <div class="quotetext">
+                        &ldquo;{{restaurant.quote}}&rdquo;
+                    </div>
+                    <div class="quotesource">
+                        {% if restaurant.quotesource %}
+                            {{restaurant.quotesource | safe}}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="flexRow">
+
+                    <div class="margin-wrap">
+                        <div class="text">{{restaurant.description | safe}}</div>
+
+                        {% if restaurant.links %}
+                            {% set linkInfo = restaurant.links.split(",") %}
+                            <div class="text relatedcov">
+                                Read our related coverage:
+
+                                {% if linkInfo.length == 1 %}
+                                    <strong>
+                                        <a href="{{linkInfo[0]}}">here</a>
+                                    </strong>
+                                {% endif %}
+
+                                {% if linkInfo.length == 2 %}
+                                    <strong>
+                                        <a href="{{linkInfo[0]}}">here</a>
+                                    </strong>
+                                    and
+                                    <strong>
+                                        <a href="{{linkInfo[1]}}">here</a>
+                                    </strong>
+                                {% endif %}
+
+                                {% if linkInfo.length >= 3 %}
+                                    <strong>
+                                        <a href="{{linkInfo[0]}}">here</a>
+                                    </strong>,
+                                    <strong>
+                                        <a href="{{linkInfo[1]}}">here</a>
+                                    </strong>
+                                    and
+                                    <strong>
+                                        <a href="{{linkInfo[2]}}">here</a>
+                                    </strong>
+                                {% endif %}
+
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="infoBlock">
+                        <div class="infoSection">
+                            <div class="address">{{restaurant.address}}; {{restaurant.phone}}
+                                <a href="{{restaurant.website}}">Visit website</a>
+                            </div>
+                        </div>
+                        <div class="lilMapSection">
+                            <div class="lilMap" id="lilMap{{loop.index}}">&zwnj;</div>
+                            <a class="googlemaps" href="{{restaurant.googlelink}}">Open in Google Maps
+                                <i class="fa fa-external-link">&zwnj;</i>
+                            </a>
+                        </div>
+
+                        <div class="youtubeClip">
+                            {% if restaurant.youtube %}
+                            <a href="{{restaurant.youtube}}">Watch the &ldquo;Parts Unknown&rdquo; clip <i class="fa fa-youtube-play" aria-hidden="true">&zwnj;</i></a>
+                            {% endif %}
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="returnTop">
+                    Return to top <i class="fa fa-arrow-circle-o-up" aria-hidden="true">&zwnj;</i>
+                </div>
+                {% if loop.index == 4 %}
+                    {% set ad = ["22"] %}
+                    {% include "partials/ad.html" %}
+                {% endif %}
+
+            </div>
+
+
+        {% endfor %}
+        <div class="howtowatch">
+            <div class="topicHead mapHead">How to watch</div>
+            <div class="seasoninfo">Anthony Bourdain: Parts Unknown<br>Season 5 Episode 5</div>
+            <a href="https://explorepartsunknown.com/destination/new-jersey/">Watch clips on Parts Unknown website</a>
+            <a href="https://www.netflix.com/title/70304979">Watch season on Netflix</a>
+            <a href="https://www.amazon.com/Korea/dp/B00WRDP93Q/ref=sr_1_11?s=instant-video&ie=UTF8&qid=1533827639&sr=1-11&keywords=parts+unknown">Buy episode on Prime Video</a>
+            <a href="https://play.google.com/store/tv/show?amp=&amp=&cdid=tvseason-GGPX4vsSFiW0UlX4RDgBFw&gdid=tvepisode-XR0z-C62WRE&gl=US&hl=en&id=qZqWbgwkJcc">Buy episode on Google Play</a>
+            <a href="https://itunes.apple.com/us/tv-season/new-jersey/id984515902?i=1000513773&ign-mpt=uo%3D4">Buy episode on iTunes</a>
+        </div>
+        {% set ad = ["23"] %}
+        {% include "partials/ad.html" %}
+    </div>
+</div>

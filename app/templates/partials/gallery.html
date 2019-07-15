@@ -1,0 +1,43 @@
+<div class="newgallery">
+    <div class="image-wrapper">
+        {% for item in photoInfo %}
+        {% if loop.first %}
+        <div class="active gallery-img" data-index="{{loop.index0}}">
+            <img
+                alt="{{item.Caption}}"
+                data-index="{{loop.index0}}"
+                class="lazy-load"
+                src="http://media.philly.com/storage/inquirer/special%20project%20media/bourdain-food-trail/RS{{item['Resource ID(s)']}}_{{item.Title}}.JPG?a">
+        </div>
+        {% else %}
+
+        <div class="gallery-img" data-index="{{loop.index0}}">
+            <img
+                alt="{{item.Caption}}"
+                data-index="{{loop.index0}}"
+                class="lazy-load"
+                data-src="http://media.philly.com/storage/inquirer/special%20project%20media/bourdain-food-trail/RS{{item['Resource ID(s)']}}_{{item.Title}}.JPG?a">
+        </div>
+
+        {% endif %}
+
+        {% endfor %}
+
+        <div class="prev arr">
+            <i class="prev arrow-icon fa fa-chevron-left" aria-hidden="true">&zwnj;</i>
+        </div>
+        <div class="next arr beforeClick">
+            <i class="next arrow-icon fa fa-chevron-right" aria-hidden="true">&zwnj;</i>
+        </div>
+
+    </div>
+
+
+    <div class="newCaption">
+        <div class="index">
+            <img src="http://media.philly.com/binary/camera.svg" alt="Camera icon">
+            <span class="count">1</span> of {{photoInfo.length}}
+        </div>
+        <div class="caption containerPhotoCaption">&zwnj;</div>
+    </div>
+</div>

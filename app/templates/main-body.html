@@ -1,0 +1,115 @@
+<div class="newTop">
+    <div class="leftSide">
+        {#
+        <div class="subHead">Anthony Bourdain's tour of New Jersey</div> #}
+        <h1 class="countyType">On the trail of Anthony Bourdain&rsquo;s New Jersey</h1>
+        {#
+        <div class="dateline">Date Here, 2018</div>
+        <div class="byline">
+            <!-- Craig LaBan / Staff Writer, <a href="mailto:claban@phillynews.com">claban@phillynews.com</a> -->
+            {% include "./partials/socialshare.html" %}
+        </div> #}
+
+    </div>
+
+    <div class="rightSide">
+        <div class="imageWrapper">
+            <img src="http://media.philly.com/storage/inquirer/special%20project%20media/bourdain-food-trail/RS1240068_FD1JERSEYFOOD02-ZF.JPG?a" alt="">
+        </div>
+    </div>
+
+</div>
+
+<div class="flexRow">
+    <div class="flexSpacer">&zwj;</div>
+    <div class="flexMainCol">
+        <div class="hero">
+            {#
+            <div class="heroImage"><img src="http://media.philly.com/storage/inquirer/special%20project%20media/bourdain-food-trail/RS1240068_FD1JERSEYFOOD02-ZF.JPG?a" alt=""></div>
+            <div class="subHead">Anthony Bourdain's tour of New Jersey</div>
+            <h1 class="countyType">Bourdain Food Trail</h1> #}
+            <div class="byline">
+                Reporting and photography by Tom Gralish
+            </div>
+            <div class="dateline">Friday, August 10, 2018</div>
+            <div class="byline">
+                <!-- Craig LaBan / Staff Writer, <a href="mailto:claban@phillynews.com">claban@phillynews.com</a> -->
+                {% include "./partials/socialshare.html" %}
+            </div>
+        </div>
+    </div>
+    <div class="flexSpacer">&zwj;</div>
+</div>
+
+<div class="flexRow">
+    <div class="flexSpacer">&zwj;</div>
+    <div class="flexMainCol">
+        <div class="introText">
+            <p>
+                <span class="fancydropcap">N</span>orth Carolina has a&nbsp;<a href="http://www.ncbbqsociety.com/trail.html">Historic Barbecue Trail</a>&nbsp;and New Hampshire offers an&nbsp;<a href="https://www.visitnh.gov/agriculture/farm-to-fork/ice-cream-trail">Ice Cream Trail</a>&nbsp;(so does&nbsp;<a href="http://www.visitbuckscounty.com/restaurants/planning-ideas/best-ice-cream-in-bucks-county/">Bucks County).&nbsp;</a>Portland has a&nbsp;<a href="http://www.pdxaletrails.com/">Beer Trail</a>, New York a&nbsp;<a href="http://fingerlakestrails.com/finger-lakes-cheese-trail/">Finger Lakes Cheese Trail</a>&nbsp;and Louisiana's got their&nbsp;<a href="https://www.louisianatravel.com/culinary/bayou-bounty">Bayou Bounty Trail</a>. New Mexico has a&nbsp;<a href="https://www.newmexico.org/places-to-go/true-trails/culinary-trails/green-chile-cheeseburger-trail/">Green Chile Cheeseburger Trail</a>&nbsp;and Kentucky a&nbsp;<a href="https://kybourbontrail.com/">Bourbon Trail</a>.</p>
+            <p>Now New Jersey could be getting a food trail of its very own.&nbsp;<a href="http://www.philly.com/philly/entertainment/television/anthony-bourdain-new-jersey-food-trail-20180618.html">Assemblyman Paul Moriarty (D., Camden) introduced legislation in June&nbsp;</a>calling on the Division of Travel and Tourism to establish an official Anthony Bourdain Food Trail.</p>
+            <p>
+                <a href="http://www.philly.com/philly/columnists/craig_laban/anthony-bourdain-philly-chefs-memories-20180608.html">Bourdain, who died June 8, 2018, was a celebrity chef, author, and television personality</a>&nbsp;&mdash; and one of New Jersey's native sons. The globe-trotting adventurer known for seeking exotic cuisine in far-flung places celebrated the food and culture of his home state in a 2015 episode of his Emmy award-winning CNN show&nbsp;<em>Parts Unknown</em>. &ldquo;Oh enchanted land of my childhood,&rdquo; he said as the&nbsp;<a href="https://explorepartsunknown.com/new-jersey/new-jersey-episode-facts/">episode opened</a>.</p>
+            <p>Stopping at Hiram's Roadstand in Fort Lee, Bourdain said, "I come here to feed my soul from the cultural wellspring that is New Jersey."</p>
+            <p>We went to see where his soul had been nourished.</p>
+
+        </div>
+    </div>
+    <div class="flexSpacer">&zwj;</div>
+</div>
+<div class="flexRow noBottomPad">
+    <div class="flexSpacer">&zwj;</div>
+    <div class="flexMainCol">
+        <div class="topicHead mapHead">On the trail of Anthony Bourdain’s New Jersey</div>
+    </div>
+    <div class="flexSpacer">&zwj;</div>
+</div>
+
+<div class="map-container">
+    <div class="mapColumn">
+        <div id="map">&zwj;</div>
+    </div>
+</div>
+<div class="expandButton">
+    <div class="expandwrap">
+        Expand map
+        <i class="fa fa-expand" aria-hidden="true">&zwj;</i>
+    </div>
+</div>
+<div class="flexRow ">
+    <div class="flexSpacer">&zwj;</div>
+    <div class="flexMainCol ">
+        <div class="JumpSection">
+            <div class="topicHead mapHead">Jump to a restuarant:</div>
+            <div class="jItems">
+                {% for item in data %}
+                    <a href="#">{{item.name}}</a>
+                {% endfor %}
+            </div>
+            {% set ad = ["21"] %}
+            {% include "partials/ad.html" %}
+        </div>
+        <div class="template">
+            {% include "inline-template.html" ignore missing %}
+        </div>
+
+    </div>
+    <div class="flexSpacer">&zwj;</div>
+</div>
+{# <div class="creditSection">
+    <div class="flexRow">
+        <div class="flexSpacer">&zwj;</div>
+
+        <div class="flexMainCol">
+            <div class="credititem">
+                <span class="title">Reporting and Photograpy:</span>
+                Tom Gralish</div>
+            <!-- <div class="credititem"><span class="title">Editor:</span> Xxx Xxxxx</div> -->
+            <div class="credititem">
+                <span class="title">Design and production:</span>
+                Garland Potts</div>
+        </div>
+        <div class="flexSpacer">&zwj;</div>
+
+    </div>
+</div> #}

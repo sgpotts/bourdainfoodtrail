@@ -1,0 +1,31 @@
+<!--removeIf(production)-->
+
+{% include "shell/top.html" ignore missing %}
+<!--removeIf(dontpublish)-->
+<style>
+    .ai2htmlContainer p {
+        font-size: 18px;
+    }
+</style>
+<!--endRemoveIf(dontpublish)-->
+<!--endRemoveIf(production)-->
+<div>
+    {% include "partials/stylesheets.html" %}
+</div>
+{% include "main-body.html" ignore missing %}
+{% include "partials/recirc-box.html" %}
+<div>
+    <!--removeIf(production)-->
+    <script src="http://www.philly.com/includes/e32121b31e345f561b84372c2bf06282/jquery-2.0.0b2.js" type="text/javascript"></script>
+    <!--endRemoveIf(production)-->
+    {% include "partials/script-links.html" %}
+</div>
+
+<!--removeIf(production)-->
+<!--build:js min-files/main.min.js -->
+<script src="js/main.js"></script>
+<!-- endbuild -->
+
+
+{% include "shell/bottom.html" ignore missing %}
+<!--endRemoveIf(production)-->
